@@ -4,6 +4,7 @@ using Data.Models.Mapping;
 
 namespace Data.Models
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public partial class pmtbdContext : DbContext
     {
         static pmtbdContext()

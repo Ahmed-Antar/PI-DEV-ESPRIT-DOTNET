@@ -57,7 +57,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Infrastucture\DataBaseFactory.cs" />
+    <Compile Include="Infrastucture\Disposable.cs" />
+    <Compile Include="Infrastucture\IDataBaseFactory.cs" />
+    <Compile Include="Infrastucture\IRepositoryBase.cs" />
+    <Compile Include="Infrastucture\IUnitOfWork.cs" />
+    <Compile Include="Infrastucture\RepositoryBase.cs" />
+    <Compile Include="Infrastucture\UnitOfWork.cs" />
+    <Compile Include="Migrations\201611080031193_firstOne.cs" />
+    <Compile Include="Migrations\201611080031193_firstOne.Designer.cs">
+      <DependentUpon>201611080031193_firstOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Mapping\categoryMap.cs" />
     <Compile Include="Models\Mapping\clientMap.cs" />
     <Compile Include="Models\Mapping\postMap.cs" />
@@ -82,6 +93,11 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611080031193_firstOne.resx">
+      <DependentUpon>201611080031193_firstOne.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

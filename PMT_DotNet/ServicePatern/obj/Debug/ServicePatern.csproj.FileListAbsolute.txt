@@ -1,0 +1,13 @@
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\ServicePatern.dll
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\ServicePatern.pdb
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\Data.dll
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\EntityFramework.dll
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\Domain.dll
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\Data.pdb
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\EntityFramework.xml
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\Domain.pdb
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\obj\Debug\ServicePatern.csprojResolveAssemblyReference.cache
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\obj\Debug\ServicePatern.dll
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\obj\Debug\ServicePatern.pdb
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\PMT_DotNet\PMT_DotNet\ServicePatern\bin\Debug\MySql.Data.dll

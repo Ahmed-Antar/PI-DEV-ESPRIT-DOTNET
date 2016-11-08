@@ -1,0 +1,16 @@
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\Data.dll.config
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\Data.dll
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\Data.pdb
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\Domain.dll
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\EntityFramework.dll
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\MySql.Data.dll
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\Domain.pdb
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\EntityFramework.xml
+D:\PMT_DotNet\PMT_DotNet\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.dll
+D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.pdb
+D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.Migrations.firstOne.resources
+D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.csproj.GenerateResource.Cache
