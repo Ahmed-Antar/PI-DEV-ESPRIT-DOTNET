@@ -1,6 +1,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using Data.Models.Mapping;
+using Domain.Entities;
 
 namespace Data.Models
 {

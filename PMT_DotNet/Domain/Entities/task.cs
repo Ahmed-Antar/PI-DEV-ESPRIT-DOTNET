@@ -1,7 +1,10 @@
+using Data.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace Data.Models
+//namespace Data.Models
+namespace Domain.Entities
 {
     public partial class task
     {
@@ -13,5 +16,9 @@ namespace Data.Models
         public Nullable<int> id_user { get; set; }
         public virtual project project { get; set; }
         public virtual user user { get; set; }
+    }
+
+    public enum State {
+        ToDo,Doing,Done
     }
 }

@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201611080031193_firstOne.Designer.cs">
       <DependentUpon>201611080031193_firstOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611161031087_first.cs" />
+    <Compile Include="Migrations\201611161031087_first.Designer.cs">
+      <DependentUpon>201611161031087_first.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Mapping\categoryMap.cs" />
     <Compile Include="Models\Mapping\clientMap.cs" />
@@ -97,6 +101,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611080031193_firstOne.resx">
       <DependentUpon>201611080031193_firstOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161031087_first.resx">
+      <DependentUpon>201611161031087_first.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

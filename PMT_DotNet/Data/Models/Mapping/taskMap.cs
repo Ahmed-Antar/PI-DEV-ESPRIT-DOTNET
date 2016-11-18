@@ -1,3 +1,4 @@
+using Domain.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
 
@@ -18,8 +19,7 @@ namespace Data.Models.Mapping
             this.Property(t => t.idProject)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
-            this.Property(t => t.state)
-                .HasMaxLength(255);
+           
 
             // Table & Column Mappings
             this.ToTable("task", "pmtbd");
