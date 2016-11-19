@@ -1,0 +1,42 @@
+﻿@model Domain.Entities.project
+
+
+
+  <table class="table">
+   
+
+
+    <tr>
+        <td>
+      
+            @Html.DisplayFor(modelItem => @Model.Name)
+        </td>
+        <td>
+          
+            @Html.DisplayFor(modelItem => @Model.Description)
+        </td>
+        
+     
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IdProject }) |
+            @Html.ActionLink("Details", "Details", new { id = Model.IdProject }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.IdProject })
+        </td>
+    </tr>
+
+
+</table>
+
+
+
+@section Styles {
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+}

@@ -1,0 +1,47 @@
+public String ProjectPercentageOfCompletion(int idProject){
+		float Percentage=0;
+		String LabelPercentage=null;
+		List<Task> AccomplishTasks;
+		List<Task> AllTasks;
+		int NbrAllTasks=0;
+		int NbrAccomplishTasks=0;
+		String AccomplishTasksQuery="select t from Task t where t.taskpk.idProject=:id and t.state='Done'";
+		TypedQuery <Task> query = entityManager.createQuery(AccomplishTasksQuery, Task.class);
+		query.setParameter("id", idProject);
+		AccomplishTasks = query.getResultList();
+		
+		for(Task task:AccomplishTasks){
+	    	 NbrAccomplishTasks ++;
+	    	 
+	     }
+		
+		String AllTasksQuery="select t from Task t where t.taskpk.idProject=:id";
+		TypedQuery <Task> query2 = entityManager.createQuery(AllTasksQuery, Task.class);
+		query2.setParameter("id", idProject);
+		AllTasks = query2.getResultList();
+		
+		for(Task task:AllTasks){
+	    	 NbrAllTasks ++;
+	    	 
+	     }
+		
+		Percentage = (100*NbrAccomplishTasks)/NbrAllTasks;
+		return LabelPercentage = "The Percentage of Completion of this Project is: "+Percentage+"%";
+	}
+
+
+********************************************************************************************
+@GET
+	@Path(value="/{id}")????!!!!!!!
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response ProjectPercentageOfCompletion(@PathParam(value="id")int idProject ) {
+  
+		String Percentage=TaskEjb.ProjectPercentageOfCompletion(idProject);
+		
+		if (Percentage==null)
+			return Response.status(Status.NOT_FOUND).entity("No Tasks Fouidd").build();
+		else
+			return Response.ok(Percentage).build();
+
+	}
+	

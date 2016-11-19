@@ -26,20 +26,22 @@ namespace Web.Controllers
             return View();
         }
 
-        public ActionResult AllTasks()
+        public ActionResult AllTasks(int idProject )
         {
-            var x = taskservice.DisplayTasksByProject(1);
+            var x = taskservice.DisplayTasksByProject(idProject);
             return View(x);
         }
 
         // GET: ReservationEvent/Create
         public ActionResult Create(string x)
         {
+
             List<string> ListState = new List<string> { "ToDo", "Doing", "Done" };
             ViewBag.x = ListState.ToSelectItem();
 
             TaskModel taskmodel = new TaskModel();
-            ViewBag.y = taskservice.FindNameProjectById(taskmodel.idProject);
+            taskmodel.projectname= taskservice.FindNameProjectById(1);
+          
             return View(taskmodel);
         }
 
@@ -48,7 +50,7 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(TaskModel taskmodel)
         {
-            
+            taskmodel.idProject=1;
 
             task taskToAdd = new task
             {

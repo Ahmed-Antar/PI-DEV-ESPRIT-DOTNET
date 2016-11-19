@@ -1,4 +1,5 @@
 ﻿using Data.Models;
+using Domain.Entities;
 using Service;
 using System;
 using System.Collections.Generic;

@@ -9,7 +9,15 @@ namespace Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                      "~/Scripts/jquery-{version}.js",
+
+                         "~/Scripts/jquery.js",
+                          "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/gritter-conf.js",
+                        "~/Scripts/jquery.signalR-2.2.1.min.js",
+                        "~/signalr/hubs",
+
+                      "~/Scripts/gritter-conf.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -21,10 +29,32 @@ namespace Web
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/gritter-conf.js",
+                      "~/Scripts/gritter-conf.js",
+                      "~/Scripts/jquery.js",
+                       "~/Scripts/jquery-1.8.3.min.js",
+                        "~/Scripts/jquery.dcjqaccordion.2.7.js",
+                         "~/Scripts/jquery.scrollTo.min.js",
+                          "~/Scripts/jquery.sparkline.js",
+                           "~/Scripts/common-scripts.js",
+                            "~/Scripts/jquery.gritter.js",
+                             "~/Scripts/gritter-conf.js",
+                              "~/Scripts/common-scripts.js",
+
+                              "~/Scripts/sparkline-chart.js",
+                             "~/Scripts/zabuto_calendar.js",
+
+
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/zabuto_calendar.css",
+                      "~/Content/jquery.gritter.css",
+                      "~/Content/style.css",
+                      "~/Content/style-responsive.css",
                       "~/Content/site.css"));
         }
     }

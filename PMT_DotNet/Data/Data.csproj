@@ -72,6 +72,14 @@
     <Compile Include="Migrations\201611161031087_first.Designer.cs">
       <DependentUpon>201611161031087_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611191112529_Doc.cs" />
+    <Compile Include="Migrations\201611191112529_Doc.Designer.cs">
+      <DependentUpon>201611191112529_Doc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611191113128_Doc1.cs" />
+    <Compile Include="Migrations\201611191113128_Doc1.Designer.cs">
+      <DependentUpon>201611191113128_Doc1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Mapping\categoryMap.cs" />
     <Compile Include="Models\Mapping\clientMap.cs" />
@@ -104,6 +112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611161031087_first.resx">
       <DependentUpon>201611161031087_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611191112529_Doc.resx">
+      <DependentUpon>201611191112529_Doc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611191113128_Doc1.resx">
+      <DependentUpon>201611191113128_Doc1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

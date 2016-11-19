@@ -79,3 +79,4 @@ D:\PMT_DotNet\PMT_DotNet\Web\obj\Debug\Web.dll
 D:\PMT_DotNet\PMT_DotNet\Web\obj\Debug\Web.pdb
 D:\PMT_DotNet\PMT_DotNet\Web\bin\ServicePatern.dll
 D:\PMT_DotNet\PMT_DotNet\Web\bin\ServicePatern.pdb
+D:\PMT_DotNet\PMT_DotNet\Web\bin\Rotativa.dll

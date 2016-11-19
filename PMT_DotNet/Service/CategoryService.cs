@@ -1,5 +1,6 @@
 ﻿using Data.Models;
 using DATA.Infrastructeurs;
+using Domain.Entities;
 using ServicePattern;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace Service
         public CategoryService()
            : base(ut)
         {
+            dbf = new DataBaseFactory();
+            ut = new UnitOfWork(dbf);
         }
     }
 }

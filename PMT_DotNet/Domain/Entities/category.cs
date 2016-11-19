@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Data.Models
+namespace Domain.Entities
 {
     public partial class category
     {

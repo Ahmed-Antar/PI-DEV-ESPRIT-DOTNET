@@ -15,3 +15,5 @@ D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.pdb
 D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.Migrations.firstOne.resources
 D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.csproj.GenerateResource.Cache
 D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.Migrations.first.resources
+D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.Migrations.Doc.resources
+D:\PMT_DotNet\PMT_DotNet\Data\obj\Debug\Data.Migrations.Doc1.resources

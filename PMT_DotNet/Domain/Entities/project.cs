@@ -1,8 +1,9 @@
+using Data.Models;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
 
-namespace Data.Models
+namespace Domain.Entities
 {
     public partial class project
     {
@@ -18,6 +19,8 @@ namespace Data.Models
         public string Priority { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public string Type { get; set; }
+
+        public string DocumentsUrl { get; set; }
         public Nullable<int> Category_IdCategory { get; set; }
         public Nullable<int> id_user { get; set; }
         public Nullable<int> id_team { get; set; }
