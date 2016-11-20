@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -195,6 +203,7 @@
     </Compile>
     <Compile Include="Helper\ExtensionMethodState.cs" />
     <Compile Include="Helper\ExtensionProjectName.cs" />
+    <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -204,14 +213,52 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\style-responsive.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\table-responsive.css" />
+    <Content Include="assets\css\to-do.css" />
+    <Content Include="assets\css\zabuto_calendar.css" />
+    <Content Include="assets\fond\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\js\bootstrap-switch.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\calendar-conf-events.js" />
+    <Content Include="assets\js\chartjs-conf.js" />
+    <Content Include="assets\js\common-scripts.js" />
+    <Content Include="assets\js\easy-pie-chart.js" />
+    <Content Include="assets\js\form-component.js" />
+    <Content Include="assets\js\gritter-conf.js" />
+    <Content Include="assets\js\jquery-1.8.3.min.js" />
+    <Content Include="assets\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="assets\js\jquery.backstretch.min.js" />
+    <Content Include="assets\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\jquery.nicescroll.js" />
+    <Content Include="assets\js\jquery.scrollTo.min.js" />
+    <Content Include="assets\js\jquery.sparkline.js" />
+    <Content Include="assets\js\jquery.tagsinput.js" />
+    <Content Include="assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="assets\js\morris-conf.js" />
+    <Content Include="assets\js\sparkline-chart.js" />
+    <Content Include="assets\js\tasks.js" />
+    <Content Include="assets\js\zabuto_calendar.js" />
+    <Content Include="assets\lineicons\lte-ie7.js" />
+    <Content Include="assets\lineicons\style.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\icons.css" />
+    <Content Include="Content\Images\ahmed.jpg" />
     <Content Include="Content\Images\blog-bg.jpg" />
     <Content Include="Content\Images\checkbox-gray.png" />
+    <Content Include="Content\Images\ghada.jpg" />
+    <Content Include="Content\Images\haythem.jpg" />
     <Content Include="Content\Images\instagram.jpg" />
     <Content Include="Content\Images\login-bg.jpg" />
     <Content Include="Content\Images\lorde.jpg" />
+    <Content Include="Content\Images\marwa.jpg" />
     <Content Include="Content\Images\mask.png" />
+    <Content Include="Content\Images\nader.jpg" />
     <Content Include="Content\Images\ny.jpg" />
     <Content Include="Content\Images\pmt.png" />
     <Content Include="Content\Images\product.jpg" />
@@ -219,6 +266,8 @@
     <Content Include="Content\Images\profile-01.jpg" />
     <Content Include="Content\Images\profile-02.jpg" />
     <Content Include="Content\Images\radio-gray.png" />
+    <Content Include="Content\Images\saif.jpg" />
+    <Content Include="Content\Images\slide.jpg" />
     <Content Include="Content\Images\ui-danro.jpg" />
     <Content Include="Content\Images\ui-divya.jpg" />
     <Content Include="Content\Images\ui-sam.png" />
@@ -236,12 +285,19 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Rotativa\wkhtmltopdf.exe" />
+    <Content Include="Scripts\bootstrap-inputmask.min.js" />
     <Content Include="Scripts\bootstrap-switch.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Browsers\qt.browser" />
+    <Content Include="assets\fond\.DS_Store" />
+    <Content Include="assets\fond\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fond\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fond\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\js\.DS_Store" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\calendar-conf-events.js" />
+    <Content Include="Scripts\Chart.js" />
     <Content Include="Scripts\chartjs-conf.js" />
     <Content Include="Scripts\common-scripts.js" />
     <Content Include="Scripts\easy-pie-chart.js" />
@@ -259,6 +315,7 @@
     <Content Include="Scripts\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="Scripts\jquery.backstretch.min.js" />
     <Content Include="Scripts\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
     <Content Include="Scripts\jquery.gritter.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\jquery.nicescroll.js" />
@@ -337,9 +394,12 @@
     <Content Include="Views\project\_DisplayProject.cshtml" />
     <Content Include="Views\project\ActiveList.cshtml" />
     <Content Include="Views\project\PassedList.cshtml" />
+    <Content Include="Views\project\AllProject.cshtml" />
+    <Content Include="Views\project\Chat.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="assets\font-awesome\" />
     <Folder Include="Content\Upload\" />
   </ItemGroup>
   <ItemGroup>

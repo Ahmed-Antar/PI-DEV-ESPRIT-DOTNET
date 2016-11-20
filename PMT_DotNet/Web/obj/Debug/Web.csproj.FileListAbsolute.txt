@@ -80,3 +80,7 @@ D:\PMT_DotNet\PMT_DotNet\Web\obj\Debug\Web.pdb
 D:\PMT_DotNet\PMT_DotNet\Web\bin\ServicePatern.dll
 D:\PMT_DotNet\PMT_DotNet\Web\bin\ServicePatern.pdb
 D:\PMT_DotNet\PMT_DotNet\Web\bin\Rotativa.dll
+D:\PMT_DotNet\PMT_DotNet\Web\bin\Microsoft.AspNet.SignalR.Core.dll
+D:\PMT_DotNet\PMT_DotNet\Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+D:\PMT_DotNet\PMT_DotNet\Web\bin\Microsoft.AspNet.SignalR.Core.xml
+D:\PMT_DotNet\PMT_DotNet\Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml

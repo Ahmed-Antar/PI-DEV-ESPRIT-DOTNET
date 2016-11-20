@@ -9,14 +9,11 @@ namespace Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                      "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-{version}.js",
 
                          "~/Scripts/jquery.js",
                           "~/Scripts/bootstrap.min.js",
                       "~/Scripts/gritter-conf.js",
-                        "~/Scripts/jquery.signalR-2.2.1.min.js",
-                        "~/signalr/hubs",
-
                       "~/Scripts/gritter-conf.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -40,7 +37,6 @@ namespace Web
                            "~/Scripts/common-scripts.js",
                             "~/Scripts/jquery.gritter.js",
                              "~/Scripts/gritter-conf.js",
-                              "~/Scripts/common-scripts.js",
 
                               "~/Scripts/sparkline-chart.js",
                              "~/Scripts/zabuto_calendar.js",
@@ -48,14 +44,30 @@ namespace Web
 
                       "~/Scripts/respond.js"));
 
+
+
+
+
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                       "~/Content/icons.css",
                       "~/Content/font-awesome.css",
                       "~/Content/zabuto_calendar.css",
                       "~/Content/jquery.gritter.css",
                       "~/Content/style.css",
                       "~/Content/style-responsive.css",
                       "~/Content/site.css"));
+
+
+
+
+
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+   "~/Content/bootstrap.css",
+   "~/Content/site.css"));
         }
     }
 }

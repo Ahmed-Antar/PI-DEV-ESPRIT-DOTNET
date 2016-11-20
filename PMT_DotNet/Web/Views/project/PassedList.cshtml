@@ -44,23 +44,25 @@
                                 <td>
                                     <a href="@Url.Action("Edit"  , new { id = item.IdProject })">
 
-                                        <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
                                     </a>
 
                                     <a href="@Url.Action("Delete"  , new { id = item.IdProject })">
 
                                         <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+
+
                                     </a>
 
                                     <a href="@Url.Action("Details"  , new { id = item.IdProject})">
 
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-check "></i></button>
+                                        <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
                                     </a>
 
 
                                     <a href="@Url.Action("AllTasks" ,"Task" , new { idProject = item.IdProject})">
 
-                                        <button class="btn btn-primary btn-xs"><i class="fa fa-check "></i></button>
+                                        <span class="label label-info label-mini">Tasks</span>
                                     </a>
                                 </td>
                             </tr>
@@ -85,14 +87,3 @@
     <button type="button" class="btn btn-primary btn-lg btn-block">Export PDF</button>
 </a>
 
-@section Styles {
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-}
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-}

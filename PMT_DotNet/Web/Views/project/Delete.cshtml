@@ -67,58 +67,18 @@
             @Html.DisplayFor(model => model.Type)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category_IdCategory)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category_IdCategory)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.id_user)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.id_user)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.id_team)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.id_team)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.id_client)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.id_client)
-        </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
         @Html.HiddenFor(model => model.IdProject)
-
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index" )
+            @Html.ActionLink("Back to List", "Index")
         </div>
     }
 </div>
-@section Styles {
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-}
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-}

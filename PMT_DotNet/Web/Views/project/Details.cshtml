@@ -75,37 +75,11 @@
             <a alt="Produit" href="@Url.Content(path)">@Model.DocumentsUrl</a>
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Category_IdCategory)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category_IdCategory)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.id_user)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.id_user)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.id_team)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.id_team)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.id_client)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.id_client)
-        </dd>
 
     </dl>
 </div>
@@ -116,19 +90,10 @@
 
 
 <a href="@Url.Action("Edit" , "project" ,  new { id = Model.IdProject })">
-    
-   <button type="button" class="btn btn-round btn-warning">EDIT</button></a>
+
+    <button type="button" class="btn btn-round btn-warning">EDIT</button>
+</a>
 
 <a href="@Url.Action("Index" , "project")">
-    <button type="button" class="btn btn-round btn-danger">Back To List</button></a>
-    @section Styles {
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    }
-
-
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-    }
+    <button type="button" class="btn btn-round btn-danger">Back To List</button>
+</a>

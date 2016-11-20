@@ -32,7 +32,7 @@ namespace Web.Controllers
 
 
         // GET: project
-        public ActionResult Index()
+        public ActionResult AllProject()
         {
             var project = Pservice.GetMany();
 
@@ -60,9 +60,11 @@ namespace Web.Controllers
         }
 
 
+
+
         [HttpPost]
 
-        public ActionResult Index(String search)
+        public ActionResult AllProject(String search)
         {
             var projects = Pservice.GetMany(p => p.Name == search);
             List<project> pr = new List<project>();
@@ -90,6 +92,14 @@ namespace Web.Controllers
             return View(pr);
 
         }
+
+
+        public ActionResult Index()
+        {
+
+            return View();
+        }
+
 
 
 
