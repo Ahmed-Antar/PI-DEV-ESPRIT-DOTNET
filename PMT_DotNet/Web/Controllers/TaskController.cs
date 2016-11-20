@@ -76,7 +76,7 @@ namespace Web.Controllers
         //GET: ReservationEvent/Edit/5
         public ActionResult Edit(int idProject, string description, int idUser)
         { 
-            task taskToEdit = taskservice.FindTaskByPk(description, idProject,idUser);
+            task taskToEdit = taskservice.FindTaskByPk(description);
             TaskModel taskmodel = new TaskModel
             {
                 Description = taskToEdit.Description,
@@ -95,7 +95,7 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Edit(int idProject, string description, int idUser, TaskModel taskmodel)
         {
-            task taskToEdit = taskservice.FindTaskByPk(description, idProject, idUser); 
+            task taskToEdit = taskservice.FindTaskByPk(description); 
 
             try
             {
@@ -119,9 +119,9 @@ namespace Web.Controllers
 
 
         // GET: ReservationEvent/Delete/5
-        public ActionResult Delete(int idProject, string description, int idUser)
+        public ActionResult Delete(string description)
         {
-            task taskToDelete = taskservice.FindTaskByPk(description, idProject, idUser);
+            task taskToDelete = taskservice.FindTaskByPk(description);
             if (taskToDelete == null)
             {
                 return HttpNotFound();
@@ -143,16 +143,14 @@ namespace Web.Controllers
 
         // POST: ReservationEvent/Delete/5
         [HttpPost]
-        public ActionResult Delete(int idProject, string description, int idUser, TaskModel taskmodel)
+        public ActionResult Delete(string description, TaskModel taskmodel)
         {
-            task taskToDelete = taskservice.FindTaskByPk(description, idProject, idUser);
-
-
-            taskservice.Delete(taskToDelete);
+            taskservice.DeleteTask(description);
             taskservice.commit();
-            return RedirectToAction("AllTasks");
+            taskservice.Dispose();
+            
 
-
+            return View();
 
         }
 
@@ -175,6 +173,14 @@ namespace Web.Controllers
           ViewData["DeadlineInfo"] = DeadlineInfo;
             return View();
         }
+
+        public ActionResult globalView()
+        {
+            
+
+            return View();
+        }
+
 
 }
 }

@@ -32,16 +32,16 @@ namespace Service
             return ut.getRepository<task>().GetMany(x => x.id_user == idUser);
         }
 
-        public void DeleteTask(string description, int idUser, int idProject)
+        public void DeleteTask(string description)
         {
-            ut.getRepository<task>().DeletebyCondition(x => x.Description == description && x.idProject == idProject && x.id_user == idUser);
+            ut.getRepository<task>().DeletebyCondition(x => x.Description == description);
         }
 
-        public task FindTaskByPk(string description, int idUser, int idProject)
+        public task FindTaskByPk(string description)
         {
-            return ut.getRepository<task>().GetMany(x => x.Description == description && x.idProject == idProject && x.id_user == idUser).First();
+            return ut.getRepository<task>().GetMany(x => x.Description == description).First();
         }
-
+                    
         public string FindNameProjectById(int idProject)
         {
             return ut.getRepository<project>().GetById(idProject).Name;
@@ -75,6 +75,7 @@ namespace Service
             else { return "the DeadLine Was passed"; }
 
         }
+
 
     }
 }
