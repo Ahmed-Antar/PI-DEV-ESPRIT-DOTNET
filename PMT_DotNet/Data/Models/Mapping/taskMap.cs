@@ -9,7 +9,7 @@ namespace Data.Models.Mapping
         public taskMap()
         {
             // Primary Key
-            this.HasKey(t => new { t.Description, t.idProject });
+            this.HasKey(t => new { t.Description, t.idProject});
 
             // Properties
             this.Property(t => t.Description)

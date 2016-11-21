@@ -6,9 +6,9 @@
 
 <h2>AllTasks</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@*<p>
+    @Html.ActionLink("Create New", "Create", new { idProject = item.idProject })
+</p>*@
 
 
 
@@ -62,6 +62,11 @@
 
 
                             <td>
+                                <a href="@Url.Action("Create")">
+
+                                    <button class="btn btn-danger btn-xs"><i class="fa fa-plus"></i></button>
+                                </a>
+
                                 <a href="@Url.Action("Edit"  ,new { idProject = item.idProject, description = item.Description, idUser = item.id_user  })">
 
                                     <button class="btn btn-success btn-xs"><i class="fa fa-pencil"></i></button>
@@ -71,6 +76,7 @@
 
                                     <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
                                 </a>
+
 
                                
                             </td>

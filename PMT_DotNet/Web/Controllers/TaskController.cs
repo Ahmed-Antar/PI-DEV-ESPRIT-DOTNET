@@ -28,19 +28,30 @@ namespace Web.Controllers
 
         public ActionResult AllTasks(int idProject )
         {
+
+            var idP = Session["idProject"] as List<int>;
+            
+            if (idP == null)
+            {
+                idP = new List<int>();
+            }
+            
+            Session["idProject"] = idP;
             var x = taskservice.DisplayTasksByProject(idProject);
+            idP.Add(idProject);
+
             return View(x);
         }
 
         // GET: ReservationEvent/Create
-        public ActionResult Create(string x)
+        public ActionResult Create()
         {
-
+            var idP = Session["idProject"] as List<int>;
             List<string> ListState = new List<string> { "ToDo", "Doing", "Done" };
             ViewBag.x = ListState.ToSelectItem();
 
             TaskModel taskmodel = new TaskModel();
-            taskmodel.projectname= taskservice.FindNameProjectById(1);
+            taskmodel.projectname= taskservice.FindNameProjectById(idP.First());
           
             return View(taskmodel);
         }
@@ -50,7 +61,8 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(TaskModel taskmodel)
         {
-            taskmodel.idProject=1;
+            var idP = Session["idProject"] as List<int>;
+            taskmodel.idProject=idP.First();
 
             task taskToAdd = new task
             {
@@ -69,41 +81,43 @@ namespace Web.Controllers
             taskservice.Dispose();
 
            
-            RedirectToAction("AllTasks");
-            return View();
+           return RedirectToAction("AllTasks", new { idProject = idP.First() });
         }
 
         //GET: ReservationEvent/Edit/5
         public ActionResult Edit(int idProject, string description, int idUser)
         { 
             task taskToEdit = taskservice.FindTaskByPk(description);
-            TaskModel taskmodel = new TaskModel
-            {
-                Description = taskToEdit.Description,
-                idProject = taskToEdit.idProject,
-                id_user = taskToEdit.id_user,
-                DeadLine = taskToEdit.DeadLine,
-                StartDate = taskToEdit.StartDate,
-                state = taskToEdit.state
+            //TaskModel taskmodel = new TaskModel
+            //{
+            //    Description = taskToEdit.Description,
+            //    idProject = taskToEdit.idProject,
+            //    id_user = taskToEdit.id_user,
+            //    DeadLine = taskToEdit.DeadLine,
+            //    StartDate = taskToEdit.StartDate,
+            //    state = taskToEdit.state
 
-            };
+            //};
 
-            return View(taskmodel);
+            return View(taskToEdit);
 
         }
         // POST: ReservationEvent/Edit/5
         [HttpPost]
-        public ActionResult Edit(int idProject, string description, int idUser, TaskModel taskmodel)
+        public ActionResult Edit(int idProject, string description, int idUser, task Task)
         {
-            task taskToEdit = taskservice.FindTaskByPk(description); 
+            var idP = Session["idProject"] as List<int>;
+            //task taskToEdit = taskservice.FindTaskByPk(Task.Description);
+            task taskToEdit = new task { Description = Task.Description, idProject = Task.idProject, DeadLine = Task.DeadLine, StartDate = Task.StartDate, state = Task.state, id_user = Task.id_user };
 
             try
             {
                 taskservice.Update(taskToEdit);
-                UpdateModel(taskToEdit);
+                //UpdateModel(taskToEdit);
+            
 
                 taskservice.commit();
-                return RedirectToAction("AllTasks");
+                return RedirectToAction("AllTasks", new { idProject = idP.First() });
 
 
             }
@@ -111,7 +125,7 @@ namespace Web.Controllers
             {
 
 
-                return View(taskToEdit);
+                return RedirectToAction("AllTasks", new { idProject = idP.First() }); 
             }
 
 
@@ -145,25 +159,27 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Delete(string description, TaskModel taskmodel)
         {
-            taskservice.DeleteTask(description);
+            var idP = Session["idProject"] as List<int>;
+            task taskToDelete = taskservice.FindTaskByPk(description);
+            taskservice.DeleteTask(taskToDelete.Description);
             taskservice.commit();
             taskservice.Dispose();
-            
 
-            return View();
+
+            return RedirectToAction("AllTasks", new { idProject = idP.First() });
 
         }
 
-        public ActionResult taskStat()
+        public ActionResult taskStat(int idProject)
        {
 
-            string projectName = taskservice.FindNameProjectById(1);
-            string DeadlineInfo = taskservice.projectDeadlineVerification(1);
+            string projectName = taskservice.FindNameProjectById(idProject);
+            string DeadlineInfo = taskservice.projectDeadlineVerification(idProject);
            // prepare a 2d array in c#
           ArrayList header = new ArrayList { "Task State", "Number" };
-          ArrayList data1 = new ArrayList { "Doing", taskservice.numberOfAccomplishTasksByProject(1) };
-          ArrayList data2 = new ArrayList { "Done", taskservice.numberOfInProgressTasksByProject(1)};
-          ArrayList data3 = new ArrayList { "To Do", taskservice.numberOfNotStartedTasksByProject(1) };
+          ArrayList data1 = new ArrayList { "Doing", taskservice.numberOfAccomplishTasksByProject(idProject) };
+          ArrayList data2 = new ArrayList { "Done", taskservice.numberOfInProgressTasksByProject(idProject) };
+          ArrayList data3 = new ArrayList { "To Do", taskservice.numberOfNotStartedTasksByProject(idProject) };
           ArrayList data = new ArrayList { header, data1, data2, data3 };
            // convert it in json
           string dataStr = JsonConvert.SerializeObject(data, Formatting.None);

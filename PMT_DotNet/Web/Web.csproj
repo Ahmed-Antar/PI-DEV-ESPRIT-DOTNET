@@ -193,11 +193,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\categoryController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Login1Controller.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PayPalController.cs" />
     <Compile Include="Controllers\projectController.cs" />
     <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\UserTestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -376,7 +380,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\PayPal\ValidateCommand.cshtml" />
     <Content Include="Views\Task\AllTasks.cshtml" />
-    <Content Include="Views\Task\Edit.cshtml" />
     <Content Include="Views\Task\taskStat.cshtml" />
     <Content Include="Views\Task\Create.cshtml" />
     <Content Include="Views\Task\Delete.cshtml" />
@@ -396,10 +399,27 @@
     <Content Include="Views\project\PassedList.cshtml" />
     <Content Include="Views\project\AllProject.cshtml" />
     <Content Include="Views\project\Chat.cshtml" />
+    <Content Include="Views\Task\Edit.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\UserTest\Index.cshtml" />
+    <Content Include="Views\UserTest\Details.cshtml" />
+    <Content Include="Views\UserTest\Create.cshtml" />
+    <Content Include="Views\UserTest\Edit.cshtml" />
+    <Content Include="Views\UserTest\Delete.cshtml" />
+    <Content Include="Views\UserTest\GiveRole.cshtml" />
+    <Content Include="Views\UserTest\Validate.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\Logout.cshtml" />
+    <Content Include="Views\Login1\Login1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\font-awesome\" />
+    <Folder Include="assets\NewFolder1\" />
     <Folder Include="Content\Upload\" />
   </ItemGroup>
   <ItemGroup>

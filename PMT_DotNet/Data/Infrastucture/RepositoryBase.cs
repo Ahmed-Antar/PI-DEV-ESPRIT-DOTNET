@@ -29,12 +29,13 @@ namespace DATA.Infrastructeurs
 
         public void Delete(T t)
         {
+            dbset.Attach(t);
             dbset.Remove(t);
         }
 
         public void Update(T t)
         {
-            dbset.Attach(t);
+             dbset.Attach(t);
             _ctx.Entry(t).State = EntityState.Modified;
         }
 
@@ -71,6 +72,7 @@ namespace DATA.Infrastructeurs
 
             foreach (T a in obj)
             {
+                dbset.Attach(a);
                 dbset.Remove(a);
             }
         }

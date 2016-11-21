@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +12,7 @@ namespace Web.Models
     {
         public string Description { get; set; }
         public int idProject { get; set; }
+        [NotMapped]
         public string projectname { get; set; }
         public Nullable<System.DateTime> DeadLine { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }

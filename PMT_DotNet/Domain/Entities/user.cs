@@ -1,6 +1,7 @@
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Data.Models
 {
@@ -18,6 +19,7 @@ namespace Data.Models
         public string email { get; set; }
         public string login { get; set; }
         public string name { get; set; }
+        [DataType(DataType.Password)]
         public string password { get; set; }
         public string role { get; set; }
         public int state { get; set; }
